@@ -17,8 +17,12 @@ namespace DeckOfCardsAPILab.Controllers
         {
             try
             {
-                DrawnDeck.Deck result = await _deckApiService.GetDrawnCards();
-                return View(result);
+                NewDeck result = await _deckApiService.GetNewDeck();
+
+                result = await _deckApiService.ShuffleDeck(result.deck_id);
+
+                DrawnDeck.Deck drawnCards = await _deckApiService.GetDrawnCards(result.deck_id);
+                return View(drawnCards);
             }
             catch (Exception ex)
             {
