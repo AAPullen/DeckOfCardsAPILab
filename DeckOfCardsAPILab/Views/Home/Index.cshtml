@@ -1,0 +1,12 @@
+﻿@model DrawnDeck.Deck
+
+<p>Deck ID = @Model.deck_id</p>
+
+@foreach (var card in Model.cards)
+    {
+        <p>@card.value of @card.suit</p>
+        <img src="@card.image"/>
+        <br />
+        <br />
+        <br />
+    }
