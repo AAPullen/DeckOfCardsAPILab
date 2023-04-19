@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddHttpClient<DeckApiService>(c =>
 {
-    c.BaseAddress = new Uri("https://deckofcardsapi.com/api/deck/new/");
+    c.BaseAddress = new Uri("https://deckofcardsapi.com/api/deck/");
 });
 
 var app = builder.Build();
